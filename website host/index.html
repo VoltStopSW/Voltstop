@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoltStop — Premium EV Charging Hubs | Recharge in Style</title>
+
+    <!-- SEO Meta Tags — This is what Google will show -->
+    <meta name="description" content="VoltStop is building a new category in EV charging — experience-driven charging hubs combining ultra-fast DC infrastructure with premium lounges. Launching in Piscataway, NJ.">
+    <meta name="keywords" content="VoltStop, EV charging, electric vehicle, premium charging hub, DC fast charging, New Jersey EV, luxury EV charging, CCS NACS charging">
+    <meta name="author" content="VoltStop Inc.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.voltstop.com">
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.voltstop.com">
+    <meta property="og:title" content="VoltStop — Premium EV Charging Hubs">
+    <meta property="og:description" content="Experience-driven EV charging combining ultra-fast DC infrastructure with luxury amenities. Launching in New Jersey.">
+    <meta property="og:site_name" content="VoltStop">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="VoltStop — Premium EV Charging Hubs">
+    <meta name="twitter:description" content="Experience-driven EV charging combining ultra-fast DC infrastructure with luxury amenities.">
+
+    <!-- Structured Data for Google -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "VoltStop",
+        "url": "https://www.voltstop.com",
+        "description": "VoltStop is building a new category in EV charging — experience-driven charging hubs combining ultra-fast DC infrastructure with premium lounges.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressRegion": "NJ",
+            "addressCountry": "US"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+1-732-258-8921",
+            "contactType": "General Inquiry",
+            "email": "info@voltstop.com"
+        },
+        "sameAs": [
+            "https://www.linkedin.com/company/voltstop",
+            "https://www.instagram.com/volt.stop",
+            "https://github.com/VoltStop"
+        ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --vs-emerald: #00D26A;
+            --vs-emerald-dim: rgba(0, 210, 106, 0.12);
+            --vs-emerald-glow: rgba(0, 210, 106, 0.08);
+            --vs-black: #060B08;
+            --vs-surface: #0D1410;
+            --vs-card: #111A15;
+            --vs-border: #1A2720;
+            --vs-border-hover: #264033;
+            --vs-text: #E4F0E8;
+            --vs-text-secondary: #7B9C87;
+            --vs-text-muted: #4A6B55;
+            --vs-white: #F5FBF7;
+            --font-main: 'Instrument Sans', -apple-system, sans-serif;
+            --font-mono: 'DM Mono', 'SF Mono', monospace;
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 20px;
+            --radius-xl: 28px;
+            --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-main);
+            background: var(--vs-black);
+            color: var(--vs-text);
+            overflow-x: hidden;
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Subtle noise texture */
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        a { color: inherit; text-decoration: none; }
+
+        /* ─── NAVIGATION ─── */
+        .nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            padding: 0 2rem;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(6, 11, 8, 0.85);
+            backdrop-filter: blur(24px) saturate(1.2);
+            border-bottom: 1px solid var(--vs-border);
+            transition: background 0.3s;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-weight: 700;
+            font-size: 1.25rem;
+            letter-spacing: -0.02em;
+            color: var(--vs-white);
+        }
+
+        .nav-logo-icon {
+            width: 34px; height: 34px;
+            background: var(--vs-emerald);
+            border-radius: 9px;
+            display: grid;
+            place-items: center;
+            font-size: 1rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--vs-text-secondary);
+            border-radius: var(--radius-sm);
+            transition: color 0.2s, background 0.2s;
+        }
+
+        .nav-menu a:hover {
+            color: var(--vs-white);
+            background: rgba(255,255,255,0.04);
+        }
+
+        .nav-cta-btn {
+            margin-left: 1rem;
+            padding: 0.55rem 1.4rem !important;
+            background: var(--vs-emerald) !important;
+            color: var(--vs-black) !important;
+            font-weight: 600 !important;
+            border-radius: var(--radius-sm) !important;
+            transition: transform 0.2s var(--ease-out), box-shadow 0.3s !important;
+        }
+
+        .nav-cta-btn:hover {
+            transform: translateY(-1px) !important;
+            box-shadow: 0 4px 24px var(--vs-emerald-dim) !important;
+            background: var(--vs-emerald) !important;
+        }
+
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--vs-text);
+            border-radius: 1px;
+            transition: all 0.3s;
+        }
+
+        /* ─── HERO ─── */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 8rem 2rem 6rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 900px;
+            height: 900px;
+            background: radial-gradient(circle, var(--vs-emerald-glow) 0%, transparent 65%);
+            pointer-events: none;
+        }
+
+        .hero-status {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--vs-emerald);
+            border: 1px solid var(--vs-border);
+            background: var(--vs-surface);
+            padding: 0.55rem 1.4rem;
+            border-radius: 100px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+            animation: fadeUp 0.7s var(--ease-out) both;
+        }
+
+        .hero-status-dot {
+            width: 6px; height: 6px;
+            background: var(--vs-emerald);
+            border-radius: 50%;
+            animation: blink 2s infinite;
+        }
+
+        .hero h1 {
+            font-size: clamp(3.2rem, 9vw, 7rem);
+            font-weight: 700;
+            line-height: 1.0;
+            letter-spacing: -0.045em;
+            max-width: 850px;
+            position: relative;
+            animation: fadeUp 0.7s var(--ease-out) 0.05s both;
+        }
+
+        .hero h1 em {
+            font-style: normal;
+            color: var(--vs-emerald);
+        }
+
+        .hero-desc {
+            font-size: clamp(1.05rem, 2vw, 1.25rem);
+            color: var(--vs-text-secondary);
+            max-width: 520px;
+            margin: 1.5rem auto 2.5rem;
+            font-weight: 400;
+            line-height: 1.7;
+            position: relative;
+            animation: fadeUp 0.7s var(--ease-out) 0.1s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            position: relative;
+            animation: fadeUp 0.7s var(--ease-out) 0.15s both;
+        }
+
+        .btn-fill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.9rem 2rem;
+            background: var(--vs-emerald);
+            color: var(--vs-black);
+            font-weight: 650;
+            font-size: 0.95rem;
+            border-radius: var(--radius-md);
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s var(--ease-out), box-shadow 0.3s;
+        }
+
+        .btn-fill:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px var(--vs-emerald-dim);
+        }
+
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.9rem 2rem;
+            background: transparent;
+            color: var(--vs-text);
+            font-weight: 600;
+            font-size: 0.95rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--vs-border);
+            cursor: pointer;
+            transition: border-color 0.3s, background 0.3s;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--vs-border-hover);
+            background: rgba(255,255,255,0.02);
+        }
+
+        /* ─── STATS BAR ─── */
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            padding: 3.5rem 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+            border-top: 1px solid var(--vs-border);
+            border-bottom: 1px solid var(--vs-border);
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            color: var(--vs-white);
+            display: block;
+        }
+
+        .stat-number span { color: var(--vs-emerald); }
+
+        .stat-label {
+            font-size: 0.78rem;
+            color: var(--vs-text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-family: var(--font-mono);
+            margin-top: 0.25rem;
+        }
+
+        /* ─── SECTIONS COMMON ─── */
+        .section {
+            padding: 6rem 2rem;
+            max-width: 1120px;
+            margin: 0 auto;
+        }
+
+        .section-eyebrow {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--vs-emerald);
+            margin-bottom: 0.75rem;
+        }
+
+        .section-heading {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 700;
+            letter-spacing: -0.035em;
+            line-height: 1.15;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-sub {
+            font-size: 1.05rem;
+            color: var(--vs-text-secondary);
+            max-width: 560px;
+            line-height: 1.7;
+            margin-bottom: 3rem;
+        }
+
+        .divider {
+            max-width: 1120px;
+            margin: 0 auto;
+            border: none;
+            border-top: 1px solid var(--vs-border);
+        }
+
+        /* ─── ABOUT ─── */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.15;
+            margin-bottom: 1.25rem;
+        }
+
+        .about-text p {
+            font-size: 1rem;
+            color: var(--vs-text-secondary);
+            line-height: 1.75;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-visual-card {
+            background: var(--vs-card);
+            border: 1px solid var(--vs-border);
+            border-radius: var(--radius-xl);
+            padding: 3.5rem 2.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 320px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .about-visual-card::before {
+            content: '';
+            position: absolute;
+            width: 220px; height: 220px;
+            background: radial-gradient(circle, var(--vs-emerald-glow) 0%, transparent 65%);
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .about-icon-ring {
+            width: 80px; height: 80px;
+            border: 2px solid var(--vs-border);
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            font-size: 2rem;
+            margin-bottom: 1.25rem;
+            position: relative;
+        }
+
+        .about-visual-card h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            position: relative;
+        }
+
+        .about-visual-card p {
+            font-size: 0.85rem;
+            color: var(--vs-text-secondary);
+            position: relative;
+        }
+
+        /* ─── FEATURES ─── */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+        }
+
+        .feature-card {
+            background: var(--vs-card);
+            border: 1px solid var(--vs-border);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            transition: transform 0.35s var(--ease-out), border-color 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--vs-border-hover);
+            box-shadow: 0 16px 48px rgba(0,0,0,0.3);
+        }
+
+        .feature-card::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--vs-emerald), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .feature-card:hover::after { opacity: 0.6; }
+
+        .feature-icon-wrap {
+            width: 44px; height: 44px;
+            background: var(--vs-emerald-dim);
+            border-radius: 11px;
+            display: grid;
+            place-items: center;
+            font-size: 1.2rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-card p {
+            font-size: 0.88rem;
+            color: var(--vs-text-secondary);
+            line-height: 1.65;
+        }
+
+        /* ─── TEAM ─── */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+        }
+
+        .team-card {
+            background: var(--vs-card);
+            border: 1px solid var(--vs-border);
+            border-radius: var(--radius-lg);
+            padding: 2.25rem 2rem;
+            text-align: center;
+            transition: transform 0.35s var(--ease-out), border-color 0.3s;
+        }
+
+        .team-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--vs-border-hover);
+        }
+
+        .team-avatar {
+            width: 72px; height: 72px;
+            border-radius: 50%;
+            background: var(--vs-emerald-dim);
+            border: 2px solid var(--vs-border);
+            display: grid;
+            place-items: center;
+            font-size: 1.5rem;
+            margin: 0 auto 1.25rem;
+            color: var(--vs-emerald);
+            font-weight: 700;
+            font-family: var(--font-mono);
+        }
+
+        .team-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+
+        .team-role {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--vs-emerald);
+            margin-bottom: 0.75rem;
+        }
+
+        .team-card p {
+            font-size: 0.88rem;
+            color: var(--vs-text-secondary);
+            line-height: 1.65;
+        }
+
+        .team-socials {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .team-socials a {
+            font-size: 0.78rem;
+            color: var(--vs-text-muted);
+            padding: 0.35rem 0.75rem;
+            border: 1px solid var(--vs-border);
+            border-radius: var(--radius-sm);
+            transition: color 0.2s, border-color 0.2s;
+        }
+
+        .team-socials a:hover {
+            color: var(--vs-emerald);
+            border-color: var(--vs-border-hover);
+        }
+
+        /* ─── LOCATION ─── */
+        .location-banner {
+            background: var(--vs-card);
+            border: 1px solid var(--vs-border);
+            border-radius: var(--radius-xl);
+            padding: 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .location-banner::before {
+            content: '';
+            position: absolute;
+            top: -40%; right: -5%;
+            width: 300px; height: 300px;
+            background: radial-gradient(circle, var(--vs-emerald-glow) 0%, transparent 65%);
+            pointer-events: none;
+        }
+
+        .loc-info { flex: 1; min-width: 280px; }
+
+        .loc-tag {
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--vs-emerald);
+            margin-bottom: 0.75rem;
+        }
+
+        .loc-info h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.75rem;
+        }
+
+        .loc-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .loc-meta span {
+            font-size: 0.88rem;
+            color: var(--vs-text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .loc-actions { flex-shrink: 0; }
+
+        /* ─── PARTNERS ─── */
+        .partners-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .partner-chip {
+            background: var(--vs-card);
+            border: 1px solid var(--vs-border);
+            border-radius: var(--radius-md);
+            padding: 0.85rem 1.6rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--vs-text-secondary);
+            transition: border-color 0.3s, color 0.3s;
+        }
+
+        .partner-chip:hover {
+            border-color: var(--vs-border-hover);
+            color: var(--vs-white);
+        }
+
+        /* ─── CTA ─── */
+        .cta-section {
+            text-align: center;
+            padding: 7rem 2rem;
+            max-width: 640px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, var(--vs-emerald-glow) 0%, transparent 65%);
+            pointer-events: none;
+        }
+
+        .cta-section h2 {
+            font-size: clamp(2.2rem, 5vw, 3.2rem);
+            font-weight: 700;
+            letter-spacing: -0.04em;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .cta-section h2 em {
+            font-style: normal;
+            color: var(--vs-emerald);
+        }
+
+        .cta-section > p {
+            color: var(--vs-text-secondary);
+            font-size: 1.05rem;
+            max-width: 440px;
+            margin: 0 auto 2.5rem;
+            position: relative;
+            line-height: 1.7;
+        }
+
+        .cta-form {
+            display: flex;
+            gap: 0.6rem;
+            max-width: 440px;
+            margin: 0 auto 2.5rem;
+            position: relative;
+        }
+
+        .cta-form input {
+            flex: 1;
+            padding: 0.85rem 1.1rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--vs-border);
+            background: var(--vs-card);
+            color: var(--vs-text);
+            font-family: var(--font-main);
+            font-size: 0.9rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .cta-form input::placeholder { color: var(--vs-text-muted); }
+        .cta-form input:focus { border-color: var(--vs-emerald); }
+
+        .cta-form button {
+            padding: 0.85rem 1.6rem;
+            border-radius: var(--radius-md);
+            background: var(--vs-emerald);
+            color: var(--vs-black);
+            border: none;
+            font-family: var(--font-main);
+            font-weight: 650;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: transform 0.2s var(--ease-out), box-shadow 0.3s;
+            white-space: nowrap;
+        }
+
+        .cta-form button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 20px var(--vs-emerald-dim);
+        }
+
+        .contact-row {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            position: relative;
+        }
+
+        .contact-chip {
+            font-size: 0.82rem;
+            color: var(--vs-text-muted);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .contact-chip a {
+            color: var(--vs-text-secondary);
+            transition: color 0.2s;
+        }
+
+        .contact-chip a:hover { color: var(--vs-emerald); }
+
+        /* ─── FOOTER ─── */
+        .footer {
+            border-top: 1px solid var(--vs-border);
+            padding: 2.5rem 2rem;
+            max-width: 1120px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .footer-left {
+            font-size: 0.8rem;
+            color: var(--vs-text-muted);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .footer-links a {
+            color: var(--vs-text-muted);
+            font-size: 0.8rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover { color: var(--vs-text-secondary); }
+
+        .footer-social {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .footer-social a {
+            width: 32px; height: 32px;
+            border: 1px solid var(--vs-border);
+            border-radius: var(--radius-sm);
+            display: grid;
+            place-items: center;
+            font-size: 0.75rem;
+            color: var(--vs-text-muted);
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .footer-social a:hover {
+            border-color: var(--vs-border-hover);
+            color: var(--vs-emerald);
+        }
+
+        /* ─── ANIMATIONS ─── */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.65s var(--ease-out), transform 0.65s var(--ease-out);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ─── MOBILE ─── */
+        @media (max-width: 768px) {
+            .nav { padding: 0 1.25rem; height: 64px; }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 64px;
+                left: 0;
+                right: 0;
+                background: rgba(6, 11, 8, 0.97);
+                backdrop-filter: blur(24px);
+                flex-direction: column;
+                padding: 1rem;
+                border-bottom: 1px solid var(--vs-border);
+                gap: 0.25rem;
+            }
+
+            .nav-menu.open { display: flex; }
+
+            .nav-menu a {
+                padding: 0.75rem 1rem;
+                width: 100%;
+            }
+
+            .nav-cta-btn {
+                margin-left: 0 !important;
+                text-align: center;
+                margin-top: 0.5rem;
+            }
+
+            .hamburger { display: flex; }
+
+            .hero { padding: 7rem 1.25rem 4rem; }
+            .section { padding: 4rem 1.25rem; }
+
+            .stats-bar { gap: 2rem; flex-wrap: wrap; padding: 2.5rem 1.25rem; }
+            .stat-number { font-size: 1.7rem; }
+
+            .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .features-grid { grid-template-columns: 1fr; }
+            .team-grid { grid-template-columns: 1fr; }
+
+            .location-banner { flex-direction: column; align-items: flex-start; padding: 2rem; }
+            .cta-form { flex-direction: column; }
+            .contact-row { flex-direction: column; align-items: center; }
+            .footer { flex-direction: column; text-align: center; }
+            .footer-links { justify-content: center; }
+            .footer-social { justify-content: center; }
+        }
+
+        @media (max-width: 480px) {
+            .stats-bar { gap: 1.5rem; }
+            .hero h1 { font-size: 2.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ─── NAV ─── -->
+    <nav class="nav">
+        <a href="#" class="nav-logo">
+            <span class="nav-logo-icon">⚡</span>
+            VoltStop
+        </a>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="#about">About</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#location">Location</a></li>
+            <li><a href="#partners">Partners</a></li>
+            <li><a href="#connect" class="nav-cta-btn">Get Early Access</a></li>
+        </ul>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- ─── HERO ─── -->
+    <section class="hero">
+        <div class="hero-status">
+            <span class="hero-status-dot"></span>
+            Launching 2026 — Piscataway, New Jersey
+        </div>
+        <h1>Recharge<br>in <em>Style.</em></h1>
+        <p class="hero-desc">Ultra-fast DC charging hubs with luxury lounges, retail experiences, and premium amenities — designed for drivers who refuse to compromise.</p>
+        <div class="hero-buttons">
+            <a href="#connect" class="btn-fill">Get Early Access →</a>
+            <a href="#features" class="btn-outline">How It Works</a>
+        </div>
+    </section>
+
+    <!-- ─── STATS ─── -->
+    <div class="stats-bar reveal">
+        <div class="stat">
+            <span class="stat-number">6–8</span>
+            <div class="stat-label">DC Fast Chargers</div>
+        </div>
+        <div class="stat">
+            <span class="stat-number"><span>350</span>kW</span>
+            <div class="stat-label">Max Power</div>
+        </div>
+        <div class="stat">
+            <span class="stat-number">CCS<span>+</span>NACS</span>
+            <div class="stat-label">Universal</div>
+        </div>
+        <div class="stat">
+            <span class="stat-number">20<span>min</span></span>
+            <div class="stat-label">Average Charge</div>
+        </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- ─── ABOUT ─── -->
+    <section class="section" id="about">
+        <div class="about-grid reveal">
+            <div class="about-text">
+                <div class="section-eyebrow">Our Mission</div>
+                <h2>Dedicated to Modern Mobility</h2>
+                <p>VoltStop is building a new category in EV charging — experience-driven charging hubs that combine ultra-fast DC infrastructure with a modern café, luxury lounge, and curated retail. We're not just charging cars. We're redefining the stop.</p>
+                <a href="#features" class="btn-outline" style="padding: 0.7rem 1.5rem; font-size: 0.88rem; display: inline-flex;">Learn More →</a>
+            </div>
+            <div class="about-visual-card">
+                <div class="about-icon-ring">⚡</div>
+                <h3>Premium Charging</h3>
+                <p>Ultra-fast. Luxury lounges. Always connected.</p>
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ─── VISION ─── -->
+    <section class="section" style="text-align: center; max-width: 720px;">
+        <div class="section-eyebrow reveal" style="text-align: center;">Our Vision</div>
+        <h2 class="section-heading reveal" style="text-align: center;">Future Forward</h2>
+        <p class="reveal" style="font-size: 1.05rem; color: var(--vs-text-secondary); line-height: 1.8; max-width: 600px; margin: 0 auto;">VoltStop aims to create a national network of premium charging hubs that fit seamlessly into the lifestyles of modern drivers — where every stop is a destination, not an inconvenience.</p>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ─── FEATURES ─── -->
+    <section class="section" id="features">
+        <div class="section-eyebrow reveal">Why VoltStop</div>
+        <h2 class="section-heading reveal">Not Your Average Charger</h2>
+        <p class="section-sub reveal">Speed, comfort, and connectivity — everything you need in one place.</p>
+        <div class="features-grid">
+            <div class="feature-card reveal">
+                <div class="feature-icon-wrap">⚡</div>
+                <h3>Ultra-Fast Charging</h3>
+                <p>DC fast chargers powered by Tritium hardware. CCS and NACS connectors for universal compatibility. Get back on the road in minutes, not hours.</p>
+            </div>
+            <div class="feature-card reveal">
+                <div class="feature-icon-wrap">🛋️</div>
+                <h3>Luxury Lounge</h3>
+                <p>Premium seating, curated refreshments, and a modern café experience. Your charging stop becomes the best part of the drive.</p>
+            </div>
+            <div class="feature-card reveal">
+                <div class="feature-icon-wrap">📡</div>
+                <h3>Stay Connected</h3>
+                <p>High-speed Wi-Fi, workspaces, and charging ports for your devices. Work, stream, or browse — zero interruptions.</p>
+            </div>
+            <div class="feature-card reveal">
+                <div class="feature-icon-wrap">📱</div>
+                <h3>Smart App</h3>
+                <p>Real-time charger availability, remote session management, and membership perks — all from the VoltStop app.</p>
+            </div>
+            <div class="feature-card reveal">
+                <div class="feature-icon-wrap">🏪</div>
+                <h3>Retail Experience</h3>
+                <p>Curated EV accessories, lifestyle products, and exclusive merchandise while you wait.</p>
+            </div>
+            <div class="feature-card reveal">
+                <div class="feature-icon-wrap">🌱</div>
+                <h3>Sustainability First</h3>
+                <p>Clean energy integration, green building practices, and a commitment to reducing carbon footprint at every hub.</p>
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ─── TEAM ─── -->
+    <section class="section" id="team">
+        <div class="section-eyebrow reveal">Leadership</div>
+        <h2 class="section-heading reveal">Meet the Team</h2>
+        <p class="section-sub reveal">The people building the future of EV infrastructure.</p>
+        <div class="team-grid">
+            <div class="team-card reveal">
+                <div class="team-avatar">CF</div>
+                <h3>Christopher Foster</h3>
+                <div class="team-role">Chief Executive Officer</div>
+                <p>Driving VoltStop's vision and business strategy. Leading partnerships, investor relations, and go-to-market execution.</p>
+                <div class="team-socials">
+                    <a href="https://www.linkedin.com/in/christopherfoster-775631376/" target="_blank" rel="noopener">LinkedIn</a>
+                </div>
+            </div>
+            <div class="team-card reveal">
+                <div class="team-avatar">MP</div>
+                <h3>Marcus Peake Jr.</h3>
+                <div class="team-role">Founder</div>
+                <p>Overseeing operations, site development, and strategic growth. Ensuring every VoltStop hub delivers a premium experience.</p>
+                <div class="team-socials">
+                    <a href="https://www.linkedin.com/in/marcus-peake-jr-801480174/" target="_blank" rel="noopener">LinkedIn</a>
+                </div>
+            </div>
+            <div class="team-card reveal">
+                <div class="team-avatar">AS</div>
+                <h3>Ayush Saxena</h3>
+                <div class="team-role">CTO & Technical Co-Founder</div>
+                <p>Architecting VoltStop OS — the software layer powering charger management, payments, load balancing, and the customer experience.</p>
+                <div class="team-socials">
+                    <a href="https://www.linkedin.com/in/ayushsaxena-18b159b2/" target="_blank" rel="noopener">LinkedIn</a>
+                    <!-- <a href="https://github.com/ayushs-dev" target="_blank" rel="noopener">GitHub</a> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ─── FIRST LOCATION ─── -->
+    <section class="section" id="location">
+        <div class="section-eyebrow reveal">First Hub</div>
+        <h2 class="section-heading reveal">Coming to New Jersey</h2>
+        <p class="section-sub reveal">Our flagship location is designed to set the standard for premium EV charging.</p>
+        <div class="location-banner reveal">
+            <div class="loc-info">
+                <div class="loc-tag">Flagship Location</div>
+                <h3>VoltStop Hub — Piscataway, NJ</h3>
+                <div class="loc-meta">
+                    <span>📍 431 Stelton Rd, Piscataway, NJ</span>
+                    <span>⚡ 6–8 DC Fast Chargers (Tritium)</span>
+                    <span>🛋️ Luxury lounge, café, retail</span>
+                    <span>📅 Targeting 2026 Launch</span>
+                </div>
+            </div>
+            <div class="loc-actions">
+                <a href="#connect" class="btn-fill" style="padding: 0.8rem 1.8rem; font-size: 0.9rem;">Get Notified →</a>
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ─── PARTNERS ─── -->
+    <section class="section" id="partners" style="text-align: center;">
+        <div class="section-eyebrow reveal" style="text-align: center;">Partners</div>
+        <h2 class="section-heading reveal" style="text-align: center;">Our Contributors</h2>
+        <p class="section-sub reveal" style="margin-left: auto; margin-right: auto; text-align: center;">Backed by organizations that share our commitment to sustainable, connected mobility.</p>
+        <div class="partners-row reveal">
+            <div class="partner-chip">Tritium</div>
+            <div class="partner-chip">Energator</div>
+            <div class="partner-chip">Skripton</div>
+            <div class="partner-chip">Travelo Boutique Hotel</div>
+            <div class="partner-chip">Gazeit</div>
+            <div class="partner-chip">GLMP.IT</div>
+            <div class="partner-chip">mtvs.news</div>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ─── CTA ─── -->
+    <section class="cta-section" id="connect">
+        <h2 class="reveal">Join the <em>VoltStop</em> Community</h2>
+        <p class="reveal">Be the first to know when we launch. Early members get exclusive founding rates and priority access.</p>
+        <div class="cta-form reveal">
+            <input type="email" placeholder="your@email.com" aria-label="Email address">
+            <button type="button">Subscribe</button>
+        </div>
+        <div class="contact-row reveal">
+            <div class="contact-chip">📞 <a href="tel:+17322588921">(732) 258-8921</a></div>
+            <div class="contact-chip">✉️ <a href="mailto:info@voltstop.com">info@voltstop.com</a></div>
+            <div class="contact-chip">📍 New Jersey, USA</div>
+        </div>
+    </section>
+
+    <!-- ─── FOOTER ─── -->
+    <footer class="footer">
+        <div class="footer-left">© 2026 VoltStop, Inc. All rights reserved.</div>
+        <ul class="footer-links">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Accessibility</a></li>
+        </ul>
+        <div class="footer-social">
+            <a href="https://www.linkedin.com/company/voltstop" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+            <a href="https://www.instagram.com/volt.stop" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+            <a href="https://github.com/VoltStop" target="_blank" rel="noopener" aria-label="GitHub">gh</a>
+        </div>
+    </footer>
+
+    <!-- ─── SCRIPTS ─── -->
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburgerBtn');
+        const navMenu = document.getElementById('navMenu');
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('open');
+        });
+
+        // Close menu on link click
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => navMenu.classList.remove('open'));
+        });
+
+        // Scroll reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => entry.target.classList.add('visible'), i * 60);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>
