@@ -4,1200 +4,361 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VoltStop — Premium EV Charging Hubs | Recharge in Style</title>
-
-    <!-- SEO Meta Tags — This is what Google will show -->
     <meta name="description" content="VoltStop is building a new category in EV charging — experience-driven charging hubs combining ultra-fast DC infrastructure with premium lounges. Launching in Piscataway, NJ.">
     <meta name="keywords" content="VoltStop, EV charging, electric vehicle, premium charging hub, DC fast charging, New Jersey EV, luxury EV charging, CCS NACS charging">
     <meta name="author" content="VoltStop Inc.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.voltstop.org">
-
-    <!-- Open Graph / Social Sharing -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.voltstop.org">
     <meta property="og:title" content="VoltStop — Premium EV Charging Hubs">
     <meta property="og:description" content="Experience-driven EV charging combining ultra-fast DC infrastructure with luxury amenities. Launching in New Jersey.">
     <meta property="og:site_name" content="VoltStop">
-
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="VoltStop — Premium EV Charging Hubs">
     <meta name="twitter:description" content="Experience-driven EV charging combining ultra-fast DC infrastructure with luxury amenities.">
-
-    <!-- Structured Data for Google -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "VoltStop",
-        "url": "https://www.voltstop.org",
-        "description": "VoltStop is building a new category in EV charging — experience-driven charging hubs combining ultra-fast DC infrastructure with premium lounges.",
-        "address": {
-            "@type": "PostalAddress",
-            "addressRegion": "NJ",
-            "addressCountry": "US"
-        },
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+1-732-258-8921",
-            "contactType": "General Inquiry",
-            "email": "info@voltstop.com"
-        },
-        "sameAs": [
-            "https://www.linkedin.com/company/voltstop",
-            "https://www.instagram.com/volt.stop",
-            "https://github.com/VoltStop"
-        ]
-    }
+    {"@context":"https://schema.org","@type":"Organization","name":"VoltStop","url":"https://www.voltstop.org","description":"VoltStop is building a new category in EV charging — experience-driven charging hubs combining ultra-fast DC infrastructure with premium lounges.","address":{"@type":"PostalAddress","addressRegion":"NJ","addressCountry":"US"},"contactPoint":{"@type":"ContactPoint","telephone":"+1-732-258-8921","contactType":"General Inquiry","email":"info@voltstop.com"},"sameAs":["https://www.linkedin.com/company/voltstop","https://www.instagram.com/volt.stop","https://github.com/VoltStop"]}
     </script>
-
-    <script type="application/ld+json">
-    {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "VoltStop",
-    "url": "https://www.voltstop.org",
-    "logo": "https://www.voltstop.org/logo.png",
-    "sameAs": [
-        "https://www.linkedin.com/company/voltstop",
-        "https://github.com/VoltStopSW"
-        ]
-    }
-    </script>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-
-    <style>
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-        :root {
-            --vs-emerald: #00D26A;
-            --vs-emerald-dim: rgba(0, 210, 106, 0.12);
-            --vs-emerald-glow: rgba(0, 210, 106, 0.08);
-            --vs-black: #060B08;
-            --vs-surface: #0D1410;
-            --vs-card: #111A15;
-            --vs-border: #1A2720;
-            --vs-border-hover: #264033;
-            --vs-text: #E4F0E8;
-            --vs-text-secondary: #7B9C87;
-            --vs-text-muted: #4A6B55;
-            --vs-white: #F5FBF7;
-            --font-main: 'Instrument Sans', -apple-system, sans-serif;
-            --font-mono: 'DM Mono', 'SF Mono', monospace;
-            --radius-sm: 8px;
-            --radius-md: 14px;
-            --radius-lg: 20px;
-            --radius-xl: 28px;
-            --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        html { scroll-behavior: smooth; }
-
-        body {
-            font-family: var(--font-main);
-            background: var(--vs-black);
-            color: var(--vs-text);
-            overflow-x: hidden;
-            line-height: 1.65;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* Subtle noise texture */
-        body::after {
-            content: '';
-            position: fixed;
-            inset: 0;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
-            pointer-events: none;
-            z-index: 9999;
-        }
-
-        a { color: inherit; text-decoration: none; }
-
-        /* ─── NAVIGATION ─── */
-        .nav {
-            position: fixed;
-            top: 0; left: 0; right: 0;
-            z-index: 1000;
-            padding: 0 2rem;
-            height: 72px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: rgba(6, 11, 8, 0.85);
-            backdrop-filter: blur(24px) saturate(1.2);
-            border-bottom: 1px solid var(--vs-border);
-            transition: background 0.3s;
-        }
-
-        .nav-logo {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            font-weight: 700;
-            font-size: 1.25rem;
-            letter-spacing: -0.02em;
-            color: var(--vs-white);
-        }
-
-        .nav-logo-icon {
-            width: 34px; height: 34px;
-            background: var(--vs-emerald);
-            border-radius: 9px;
-            display: grid;
-            place-items: center;
-            font-size: 1rem;
-        }
-
-        .nav-menu {
-            display: flex;
-            align-items: center;
-            gap: 0.25rem;
-            list-style: none;
-        }
-
-        .nav-menu a {
-            padding: 0.5rem 1rem;
-            font-size: 0.875rem;
-            font-weight: 500;
-            color: var(--vs-text-secondary);
-            border-radius: var(--radius-sm);
-            transition: color 0.2s, background 0.2s;
-        }
-
-        .nav-menu a:hover {
-            color: var(--vs-white);
-            background: rgba(255,255,255,0.04);
-        }
-
-        .nav-cta-btn {
-            margin-left: 1rem;
-            padding: 0.55rem 1.4rem !important;
-            background: var(--vs-emerald) !important;
-            color: var(--vs-black) !important;
-            font-weight: 600 !important;
-            border-radius: var(--radius-sm) !important;
-            transition: transform 0.2s var(--ease-out), box-shadow 0.3s !important;
-        }
-
-        .nav-cta-btn:hover {
-            transform: translateY(-1px) !important;
-            box-shadow: 0 4px 24px var(--vs-emerald-dim) !important;
-            background: var(--vs-emerald) !important;
-        }
-
-        .hamburger {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 8px;
-            flex-direction: column;
-            gap: 5px;
-        }
-
-        .hamburger span {
-            display: block;
-            width: 22px;
-            height: 2px;
-            background: var(--vs-text);
-            border-radius: 1px;
-            transition: all 0.3s;
-        }
-
-        /* ─── HERO ─── */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 8rem 2rem 6rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -30%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 900px;
-            height: 900px;
-            background: radial-gradient(circle, var(--vs-emerald-glow) 0%, transparent 65%);
-            pointer-events: none;
-        }
-
-        .hero-status {
-            font-family: var(--font-mono);
-            font-size: 0.7rem;
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-            color: var(--vs-emerald);
-            border: 1px solid var(--vs-border);
-            background: var(--vs-surface);
-            padding: 0.55rem 1.4rem;
-            border-radius: 100px;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            margin-bottom: 2.5rem;
-            position: relative;
-            animation: fadeUp 0.7s var(--ease-out) both;
-        }
-
-        .hero-status-dot {
-            width: 6px; height: 6px;
-            background: var(--vs-emerald);
-            border-radius: 50%;
-            animation: blink 2s infinite;
-        }
-
-        .hero h1 {
-            font-size: clamp(3.2rem, 9vw, 7rem);
-            font-weight: 700;
-            line-height: 1.0;
-            letter-spacing: -0.045em;
-            max-width: 850px;
-            position: relative;
-            animation: fadeUp 0.7s var(--ease-out) 0.05s both;
-        }
-
-        .hero h1 em {
-            font-style: normal;
-            color: var(--vs-emerald);
-        }
-
-        .hero-desc {
-            font-size: clamp(1.05rem, 2vw, 1.25rem);
-            color: var(--vs-text-secondary);
-            max-width: 520px;
-            margin: 1.5rem auto 2.5rem;
-            font-weight: 400;
-            line-height: 1.7;
-            position: relative;
-            animation: fadeUp 0.7s var(--ease-out) 0.1s both;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-            justify-content: center;
-            position: relative;
-            animation: fadeUp 0.7s var(--ease-out) 0.15s both;
-        }
-
-        .btn-fill {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.9rem 2rem;
-            background: var(--vs-emerald);
-            color: var(--vs-black);
-            font-weight: 650;
-            font-size: 0.95rem;
-            border-radius: var(--radius-md);
-            border: none;
-            cursor: pointer;
-            transition: transform 0.2s var(--ease-out), box-shadow 0.3s;
-        }
-
-        .btn-fill:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 32px var(--vs-emerald-dim);
-        }
-
-        .btn-outline {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.9rem 2rem;
-            background: transparent;
-            color: var(--vs-text);
-            font-weight: 600;
-            font-size: 0.95rem;
-            border-radius: var(--radius-md);
-            border: 1px solid var(--vs-border);
-            cursor: pointer;
-            transition: border-color 0.3s, background 0.3s;
-        }
-
-        .btn-outline:hover {
-            border-color: var(--vs-border-hover);
-            background: rgba(255,255,255,0.02);
-        }
-
-        /* ─── STATS BAR ─── */
-        .stats-bar {
-            display: flex;
-            justify-content: center;
-            gap: 4rem;
-            padding: 3.5rem 2rem;
-            max-width: 900px;
-            margin: 0 auto;
-            border-top: 1px solid var(--vs-border);
-            border-bottom: 1px solid var(--vs-border);
-        }
-
-        .stat {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 2.2rem;
-            font-weight: 700;
-            letter-spacing: -0.03em;
-            color: var(--vs-white);
-            display: block;
-        }
-
-        .stat-number span { color: var(--vs-emerald); }
-
-        .stat-label {
-            font-size: 0.78rem;
-            color: var(--vs-text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            font-family: var(--font-mono);
-            margin-top: 0.25rem;
-        }
-
-        /* ─── SECTIONS COMMON ─── */
-        .section {
-            padding: 6rem 2rem;
-            max-width: 1120px;
-            margin: 0 auto;
-        }
-
-        .section-eyebrow {
-            font-family: var(--font-mono);
-            font-size: 0.7rem;
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-            color: var(--vs-emerald);
-            margin-bottom: 0.75rem;
-        }
-
-        .section-heading {
-            font-size: clamp(2rem, 4vw, 2.8rem);
-            font-weight: 700;
-            letter-spacing: -0.035em;
-            line-height: 1.15;
-            margin-bottom: 0.75rem;
-        }
-
-        .section-sub {
-            font-size: 1.05rem;
-            color: var(--vs-text-secondary);
-            max-width: 560px;
-            line-height: 1.7;
-            margin-bottom: 3rem;
-        }
-
-        .divider {
-            max-width: 1120px;
-            margin: 0 auto;
-            border: none;
-            border-top: 1px solid var(--vs-border);
-        }
-
-        /* ─── ABOUT ─── */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .about-text h2 {
-            font-size: clamp(1.8rem, 3.5vw, 2.4rem);
-            font-weight: 700;
-            letter-spacing: -0.03em;
-            line-height: 1.15;
-            margin-bottom: 1.25rem;
-        }
-
-        .about-text p {
-            font-size: 1rem;
-            color: var(--vs-text-secondary);
-            line-height: 1.75;
-            margin-bottom: 1.5rem;
-        }
-
-        .about-visual-card {
-            background: var(--vs-card);
-            border: 1px solid var(--vs-border);
-            border-radius: var(--radius-xl);
-            padding: 3.5rem 2.5rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            min-height: 320px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .about-visual-card::before {
-            content: '';
-            position: absolute;
-            width: 220px; height: 220px;
-            background: radial-gradient(circle, var(--vs-emerald-glow) 0%, transparent 65%);
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .about-icon-ring {
-            width: 80px; height: 80px;
-            border: 2px solid var(--vs-border);
-            border-radius: 50%;
-            display: grid;
-            place-items: center;
-            font-size: 2rem;
-            margin-bottom: 1.25rem;
-            position: relative;
-        }
-
-        .about-visual-card h3 {
-            font-size: 1.15rem;
-            font-weight: 600;
-            margin-bottom: 0.4rem;
-            position: relative;
-        }
-
-        .about-visual-card p {
-            font-size: 0.85rem;
-            color: var(--vs-text-secondary);
-            position: relative;
-        }
-
-        /* ─── FEATURES ─── */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.25rem;
-        }
-
-        .feature-card {
-            background: var(--vs-card);
-            border: 1px solid var(--vs-border);
-            border-radius: var(--radius-lg);
-            padding: 2rem;
-            transition: transform 0.35s var(--ease-out), border-color 0.3s, box-shadow 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--vs-border-hover);
-            box-shadow: 0 16px 48px rgba(0,0,0,0.3);
-        }
-
-        .feature-card::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--vs-emerald), transparent);
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .feature-card:hover::after { opacity: 0.6; }
-
-        .feature-icon-wrap {
-            width: 44px; height: 44px;
-            background: var(--vs-emerald-dim);
-            border-radius: 11px;
-            display: grid;
-            place-items: center;
-            font-size: 1.2rem;
-            margin-bottom: 1.25rem;
-        }
-
-        .feature-card h3 {
-            font-size: 1.05rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .feature-card p {
-            font-size: 0.88rem;
-            color: var(--vs-text-secondary);
-            line-height: 1.65;
-        }
-
-        /* ─── TEAM ─── */
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.25rem;
-        }
-
-        .team-card {
-            background: var(--vs-card);
-            border: 1px solid var(--vs-border);
-            border-radius: var(--radius-lg);
-            padding: 2.25rem 2rem;
-            text-align: center;
-            transition: transform 0.35s var(--ease-out), border-color 0.3s;
-        }
-
-        .team-card:hover {
-            transform: translateY(-3px);
-            border-color: var(--vs-border-hover);
-        }
-
-        .team-avatar {
-            width: 72px; height: 72px;
-            border-radius: 50%;
-            background: var(--vs-emerald-dim);
-            border: 2px solid var(--vs-border);
-            display: grid;
-            place-items: center;
-            font-size: 1.5rem;
-            margin: 0 auto 1.25rem;
-            color: var(--vs-emerald);
-            font-weight: 700;
-            font-family: var(--font-mono);
-        }
-
-        .team-card h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 0.2rem;
-        }
-
-        .team-role {
-            font-family: var(--font-mono);
-            font-size: 0.72rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--vs-emerald);
-            margin-bottom: 0.75rem;
-        }
-
-        .team-card p {
-            font-size: 0.88rem;
-            color: var(--vs-text-secondary);
-            line-height: 1.65;
-        }
-
-        .team-socials {
-            display: flex;
-            justify-content: center;
-            gap: 0.75rem;
-            margin-top: 1rem;
-        }
-
-        .team-socials a {
-            font-size: 0.78rem;
-            color: var(--vs-text-muted);
-            padding: 0.35rem 0.75rem;
-            border: 1px solid var(--vs-border);
-            border-radius: var(--radius-sm);
-            transition: color 0.2s, border-color 0.2s;
-        }
-
-        .team-socials a:hover {
-            color: var(--vs-emerald);
-            border-color: var(--vs-border-hover);
-        }
-
-        /* ─── LOCATION ─── */
-        .location-banner {
-            background: var(--vs-card);
-            border: 1px solid var(--vs-border);
-            border-radius: var(--radius-xl);
-            padding: 3rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .location-banner::before {
-            content: '';
-            position: absolute;
-            top: -40%; right: -5%;
-            width: 300px; height: 300px;
-            background: radial-gradient(circle, var(--vs-emerald-glow) 0%, transparent 65%);
-            pointer-events: none;
-        }
-
-        .loc-info { flex: 1; min-width: 280px; }
-
-        .loc-tag {
-            font-family: var(--font-mono);
-            font-size: 0.68rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--vs-emerald);
-            margin-bottom: 0.75rem;
-        }
-
-        .loc-info h3 {
-            font-size: 1.4rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            margin-bottom: 0.75rem;
-        }
-
-        .loc-meta {
-            display: flex;
-            flex-direction: column;
-            gap: 0.4rem;
-        }
-
-        .loc-meta span {
-            font-size: 0.88rem;
-            color: var(--vs-text-secondary);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .loc-actions { flex-shrink: 0; }
-
-        /* ─── PARTNERS ─── */
-        .partners-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            justify-content: center;
-        }
-
-        .partner-chip {
-            background: var(--vs-card);
-            border: 1px solid var(--vs-border);
-            border-radius: var(--radius-md);
-            padding: 0.85rem 1.6rem;
-            font-weight: 600;
-            font-size: 0.9rem;
-            color: var(--vs-text-secondary);
-            transition: border-color 0.3s, color 0.3s;
-        }
-
-        .partner-chip:hover {
-            border-color: var(--vs-border-hover);
-            color: var(--vs-white);
-        }
-
-        /* ─── CTA ─── */
-        .cta-section {
-            text-align: center;
-            padding: 7rem 2rem;
-            max-width: 640px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 50%;
-            transform: translateX(-50%);
-            width: 500px; height: 500px;
-            background: radial-gradient(circle, var(--vs-emerald-glow) 0%, transparent 65%);
-            pointer-events: none;
-        }
-
-        .cta-section h2 {
-            font-size: clamp(2.2rem, 5vw, 3.2rem);
-            font-weight: 700;
-            letter-spacing: -0.04em;
-            margin-bottom: 1rem;
-            position: relative;
-        }
-
-        .cta-section h2 em {
-            font-style: normal;
-            color: var(--vs-emerald);
-        }
-
-        .cta-section > p {
-            color: var(--vs-text-secondary);
-            font-size: 1.05rem;
-            max-width: 440px;
-            margin: 0 auto 2.5rem;
-            position: relative;
-            line-height: 1.7;
-        }
-
-        .cta-form {
-            display: flex;
-            gap: 0.6rem;
-            max-width: 440px;
-            margin: 0 auto 2.5rem;
-            position: relative;
-        }
-
-        .cta-form input {
-            flex: 1;
-            padding: 0.85rem 1.1rem;
-            border-radius: var(--radius-md);
-            border: 1px solid var(--vs-border);
-            background: var(--vs-card);
-            color: var(--vs-text);
-            font-family: var(--font-main);
-            font-size: 0.9rem;
-            outline: none;
-            transition: border-color 0.3s;
-        }
-
-        .cta-form input::placeholder { color: var(--vs-text-muted); }
-        .cta-form input:focus { border-color: var(--vs-emerald); }
-
-        .cta-form button {
-            padding: 0.85rem 1.6rem;
-            border-radius: var(--radius-md);
-            background: var(--vs-emerald);
-            color: var(--vs-black);
-            border: none;
-            font-family: var(--font-main);
-            font-weight: 650;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: transform 0.2s var(--ease-out), box-shadow 0.3s;
-            white-space: nowrap;
-        }
-
-        .cta-form button:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 20px var(--vs-emerald-dim);
-        }
-
-        .contact-row {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            position: relative;
-        }
-
-        .contact-chip {
-            font-size: 0.82rem;
-            color: var(--vs-text-muted);
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-
-        .contact-chip a {
-            color: var(--vs-text-secondary);
-            transition: color 0.2s;
-        }
-
-        .contact-chip a:hover { color: var(--vs-emerald); }
-
-        /* ─── FOOTER ─── */
-        .footer {
-            border-top: 1px solid var(--vs-border);
-            padding: 2.5rem 2rem;
-            max-width: 1120px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-        }
-
-        .footer-left {
-            font-size: 0.8rem;
-            color: var(--vs-text-muted);
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 1.5rem;
-            list-style: none;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-
-        .footer-links a {
-            color: var(--vs-text-muted);
-            font-size: 0.8rem;
-            transition: color 0.2s;
-        }
-
-        .footer-links a:hover { color: var(--vs-text-secondary); }
-
-        .footer-social {
-            display: flex;
-            gap: 0.75rem;
-        }
-
-        .footer-social a {
-            width: 32px; height: 32px;
-            border: 1px solid var(--vs-border);
-            border-radius: var(--radius-sm);
-            display: grid;
-            place-items: center;
-            font-size: 0.75rem;
-            color: var(--vs-text-muted);
-            transition: border-color 0.2s, color 0.2s;
-        }
-
-        .footer-social a:hover {
-            border-color: var(--vs-border-hover);
-            color: var(--vs-emerald);
-        }
-
-        /* ─── ANIMATIONS ─── */
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(24px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.3; }
-        }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(28px);
-            transition: opacity 0.65s var(--ease-out), transform 0.65s var(--ease-out);
-        }
-
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ─── MOBILE ─── */
-        @media (max-width: 768px) {
-            .nav { padding: 0 1.25rem; height: 64px; }
-
-            .nav-menu {
-                display: none;
-                position: absolute;
-                top: 64px;
-                left: 0;
-                right: 0;
-                background: rgba(6, 11, 8, 0.97);
-                backdrop-filter: blur(24px);
-                flex-direction: column;
-                padding: 1rem;
-                border-bottom: 1px solid var(--vs-border);
-                gap: 0.25rem;
-            }
-
-            .nav-menu.open { display: flex; }
-
-            .nav-menu a {
-                padding: 0.75rem 1rem;
-                width: 100%;
-            }
-
-            .nav-cta-btn {
-                margin-left: 0 !important;
-                text-align: center;
-                margin-top: 0.5rem;
-            }
-
-            .hamburger { display: flex; }
-
-            .hero { padding: 7rem 1.25rem 4rem; }
-            .section { padding: 4rem 1.25rem; }
-
-            .stats-bar { gap: 2rem; flex-wrap: wrap; padding: 2.5rem 1.25rem; }
-            .stat-number { font-size: 1.7rem; }
-
-            .about-grid { grid-template-columns: 1fr; gap: 2rem; }
-            .features-grid { grid-template-columns: 1fr; }
-            .team-grid { grid-template-columns: 1fr; }
-
-            .location-banner { flex-direction: column; align-items: flex-start; padding: 2rem; }
-            .cta-form { flex-direction: column; }
-            .contact-row { flex-direction: column; align-items: center; }
-            .footer { flex-direction: column; text-align: center; }
-            .footer-links { justify-content: center; }
-            .footer-social { justify-content: center; }
-        }
-
-        @media (max-width: 480px) {
-            .stats-bar { gap: 1.5rem; }
-            .hero h1 { font-size: 2.8rem; }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <!-- ─── NAV ─── -->
-    <nav class="nav">
-        <a href="#" class="nav-logo">
-            <span class="nav-logo-icon">⚡</span>
-            VoltStop
-        </a>
-        <ul class="nav-menu" id="navMenu">
+    <div class="loader" id="loader"><div class="loader-inner"><div class="loader-bolt">⚡</div><div class="loader-bar"></div></div></div>
+    <div class="cursor-glow" id="cursorGlow"></div>
+    <nav class="nav" id="nav">
+        <a href="#" class="nav-logo"><span class="nav-logo-mark"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>VoltStop</a>
+        <ul class="nav-links" id="navLinks">
             <li><a href="#about">About</a></li>
             <li><a href="#features">Features</a></li>
             <li><a href="#team">Team</a></li>
             <li><a href="#location">Location</a></li>
             <li><a href="#partners">Partners</a></li>
-            <li><a href="#connect" class="nav-cta-btn">Get Early Access</a></li>
+            <li><a href="#connect" class="nav-cta">Early Access</a></li>
         </ul>
-        <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
-            <span></span><span></span><span></span>
-        </button>
+        <button class="hamburger" id="menuBtn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     </nav>
-
-    <!-- ─── HERO ─── -->
     <section class="hero">
-        <div class="hero-status">
-            <span class="hero-status-dot"></span>
-            Launching 2026 — Piscataway, New Jersey
+        <canvas id="heroCanvas"></canvas>
+        <div class="hero-content">
+            <div class="hero-tag"><span class="hero-tag-dot"></span>Launching 2026 — Piscataway, NJ</div>
+            <h1>Recharge<br>in <span class="accent">Style.</span></h1>
+            <p class="hero-sub">Ultra-fast DC charging hubs with luxury lounges, retail, and premium amenities — built for drivers who refuse to compromise.</p>
+            <div class="hero-btns"><a href="#connect" class="btn-glow">Get Early Access →</a><a href="#features" class="btn-ghost">How It Works</a></div>
         </div>
-        <h1>Recharge<br>in <em>Style.</em></h1>
-        <p class="hero-desc">Ultra-fast DC charging hubs with luxury lounges, retail experiences, and premium amenities — designed for drivers who refuse to compromise.</p>
-        <div class="hero-buttons">
-            <a href="#connect" class="btn-fill">Get Early Access →</a>
-            <a href="#features" class="btn-outline">How It Works</a>
-        </div>
+        <div class="scroll-hint"><span>Scroll</span><div class="scroll-line"></div></div>
     </section>
-
-    <!-- ─── STATS ─── -->
-    <div class="stats-bar reveal">
-        <div class="stat">
-            <span class="stat-number">6–8</span>
-            <div class="stat-label">DC Fast Chargers</div>
-        </div>
-        <div class="stat">
-            <span class="stat-number"><span>350</span>kW</span>
-            <div class="stat-label">Max Power</div>
-        </div>
-        <div class="stat">
-            <span class="stat-number">CCS<span>+</span>NACS</span>
-            <div class="stat-label">Universal</div>
-        </div>
-        <div class="stat">
-            <span class="stat-number">20<span>min</span></span>
-            <div class="stat-label">Average Charge</div>
-        </div>
+    <div class="stats-ribbon reveal">
+        <div class="stat-cell"><div class="stat-val">6–8</div><div class="stat-lbl">DC Fast Chargers</div></div>
+        <div class="stat-cell"><div class="stat-val">350<em>kW</em></div><div class="stat-lbl">Max Power</div></div>
+        <div class="stat-cell"><div class="stat-val">CCS<em>+</em>NACS</div><div class="stat-lbl">Universal</div></div>
+        <div class="stat-cell"><div class="stat-val">20<em>min</em></div><div class="stat-lbl">Average Charge</div></div>
     </div>
-
-    <hr class="divider">
-
-    <!-- ─── ABOUT ─── -->
-    <section class="section" id="about">
-        <div class="about-grid reveal">
-            <div class="about-text">
-                <div class="section-eyebrow">Our Mission</div>
-                <h2>Dedicated to Modern Mobility</h2>
-                <p>VoltStop is building a new category in EV charging — experience-driven charging hubs that combine ultra-fast DC infrastructure with a modern café, luxury lounge, and curated retail. We're not just charging cars. We're redefining the stop.</p>
-                <a href="#features" class="btn-outline" style="padding: 0.7rem 1.5rem; font-size: 0.88rem; display: inline-flex;">Learn More →</a>
+    <hr class="hr">
+    <section class="sec" id="about">
+        <div class="sec-eyebrow reveal">Our Mission</div>
+        <div class="about-bento">
+            <div class="bento-card bento-mission reveal">
+                <h2>We're building a new category in EV charging.</h2>
+                <p>Experience-driven hubs that combine ultra-fast DC infrastructure with a modern café, luxury lounge, and curated retail. We're not just charging cars — we're redefining the stop.</p>
+                <a href="#features" class="btn-ghost" style="padding:0.65rem 1.4rem;font-size:0.85rem;display:inline-flex;margin-top:0.5rem;">Explore Features →</a>
             </div>
-            <div class="about-visual-card">
-                <div class="about-icon-ring">⚡</div>
+            <div class="bento-card bento-visual reveal">
+                <div class="bento-visual-orb">⚡</div>
                 <h3>Premium Charging</h3>
                 <p>Ultra-fast. Luxury lounges. Always connected.</p>
             </div>
         </div>
     </section>
-
-    <hr class="divider">
-
-    <!-- ─── VISION ─── -->
-    <section class="section" style="text-align: center; max-width: 720px;">
-        <div class="section-eyebrow reveal" style="text-align: center;">Our Vision</div>
-        <h2 class="section-heading reveal" style="text-align: center;">Future Forward</h2>
-        <p class="reveal" style="font-size: 1.05rem; color: var(--vs-text-secondary); line-height: 1.8; max-width: 600px; margin: 0 auto;">VoltStop aims to create a national network of premium charging hubs that fit seamlessly into the lifestyles of modern drivers — where every stop is a destination, not an inconvenience.</p>
+    <hr class="hr">
+    <section class="vision-strip">
+        <div class="sec-eyebrow reveal" style="justify-content:center;">Our Vision</div>
+        <h2 class="reveal">Future <span class="accent-inline">Forward</span></h2>
+        <p class="reveal">A national network of premium charging hubs that fit seamlessly into the lifestyles of modern drivers — where every stop is a destination, not an inconvenience.</p>
     </section>
-
-    <hr class="divider">
-
-    <!-- ─── FEATURES ─── -->
-    <section class="section" id="features">
-        <div class="section-eyebrow reveal">Why VoltStop ?</div>
-        <h2 class="section-heading reveal">Not Your Average Charger</h2>
-        <p class="section-sub reveal">Speed, comfort, and connectivity — everything you need in one place.</p>
-        <div class="features-grid">
-            <div class="feature-card reveal">
-                <div class="feature-icon-wrap">⚡</div>
-                <h3>Ultra-Fast Charging</h3>
-                <p>DC fast chargers powered by Tritium hardware. CCS and NACS connectors for universal compatibility. Get back on the road in minutes, not hours.</p>
+    <hr class="hr">
+    <section class="sec" id="features">
+        <div class="sec-eyebrow reveal">Why VoltStop</div>
+        <h2 class="sec-heading reveal">Not Your Average Charger</h2>
+        <p class="sec-desc reveal">Speed, comfort, and connectivity — in one place.</p>
+        <div class="feat-grid reveal-stagger">
+            <div class="feat-card"><div class="feat-ico">⚡</div><h3>Ultra-Fast Charging</h3><p>DC fast chargers powered by Tritium hardware. CCS and NACS dual connectors. Back on the road in minutes.</p></div>
+            <div class="feat-card"><div class="feat-ico">🛋️</div><h3>Luxury Lounge</h3><p>Premium seating, curated refreshments, and a modern café. Your best stop of the drive.</p></div>
+            <div class="feat-card"><div class="feat-ico">📡</div><h3>Stay Connected</h3><p>High-speed Wi-Fi, workspaces, and device charging. Work, stream, or browse — zero interruptions.</p></div>
+            <div class="feat-card"><div class="feat-ico">📱</div><h3>Smart App</h3><p>Real-time availability, remote session management, and membership perks from the VoltStop app.</p></div>
+            <div class="feat-card"><div class="feat-ico">🏪</div><h3>Retail Experience</h3><p>Curated EV accessories, lifestyle products, and exclusive merchandise while you wait.</p></div>
+            <div class="feat-card"><div class="feat-ico">🌱</div><h3>Sustainability First</h3><p>Clean energy integration, green building practices, and a commitment to reducing carbon footprint.</p></div>
+        </div>
+    </section>
+    <hr class="hr">
+    <section class="sec" id="team">
+        <div class="sec-eyebrow reveal">Leadership</div>
+        <h2 class="sec-heading reveal">Meet the Team</h2>
+        <p class="sec-desc reveal">The people building the future of EV infrastructure.</p>
+        <div class="team-grid reveal-stagger">
+            <div class="team-card">
+                <div class="team-av">CF</div><h3>Christopher Foster</h3><div class="team-title">CEO & Co-Founder</div>
+                <p>Driving VoltStop's vision, business strategy, partnerships, and go-to-market execution.</p>
+                <div class="team-links"><a href="https://www.linkedin.com/in/christopher-foster-775631376/" target="_blank" rel="noopener">LinkedIn</a></div>
             </div>
-            <div class="feature-card reveal">
-                <div class="feature-icon-wrap">🛋️</div>
-                <h3>Luxury Lounge</h3>
-                <p>Premium seating, curated refreshments, and a modern café experience. Your charging stop becomes the best part of the drive.</p>
+            <div class="team-card">
+                <div class="team-av">MP</div><h3>Marcus Peake Jr.</h3><div class="team-title">Founder & President</div>
+                <p>Overseeing operations, site development, and strategic growth across all hubs.</p>
+                <div class="team-links"><a href="https://www.linkedin.com/in/marcus-peake-jr-801480174/" target="_blank" rel="noopener">LinkedIn</a></div>
             </div>
-            <div class="feature-card reveal">
-                <div class="feature-icon-wrap">📡</div>
-                <h3>Stay Connected</h3>
-                <p>High-speed Wi-Fi, workspaces, and charging ports for your devices. Work, stream, or browse — zero interruptions.</p>
-            </div>
-            <div class="feature-card reveal">
-                <div class="feature-icon-wrap">📱</div>
-                <h3>Smart App</h3>
-                <p>Real-time charger availability, remote session management, and membership perks — all from the VoltStop app.</p>
-            </div>
-            <div class="feature-card reveal">
-                <div class="feature-icon-wrap">🏪</div>
-                <h3>Retail Experience</h3>
-                <p>Curated EV accessories, lifestyle products, and exclusive merchandise while you wait.</p>
-            </div>
-            <div class="feature-card reveal">
-                <div class="feature-icon-wrap">🌱</div>
-                <h3>Sustainability First</h3>
-                <p>Clean energy integration, green building practices, and a commitment to reducing carbon footprint at every hub.</p>
+            <div class="team-card">
+                <div class="team-av">AS</div><h3>Ayush Saxena</h3><div class="team-title">CTO & Technical Co-Founder</div>
+                <p>Architecting VoltStop OS — the software powering charger management, payments, and the customer experience.</p>
+                <div class="team-links"><a href="https://www.linkedin.com/in/ayush-saxena-18b159b2/" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/ayushs-dev" target="_blank" rel="noopener">GitHub</a></div>
             </div>
         </div>
     </section>
-
-    <hr class="divider">
-
-    <!-- ─── TEAM ─── -->
-    <section class="section" id="team">
-        <div class="section-eyebrow reveal">Leadership</div>
-        <h2 class="section-heading reveal">Meet the Team</h2>
-        <p class="section-sub reveal">The people building the future of EV infrastructure.</p>
-        <div class="team-grid">
-            <div class="team-card reveal">
-                <div class="team-avatar">CF</div>
-                <h3>Christopher Foster</h3>
-                <div class="team-role">CEO & Co-Founder</div>
-                <p>Driving VoltStop's vision and business strategy. Leading partnerships, investor relations, and go-to-market execution.</p>
-                <div class="team-socials">
-                    <a href="https://www.linkedin.com/in/christopher-foster-775631376/" target="_blank" rel="noopener">LinkedIn</a>
-                </div>
+    <hr class="hr">
+    <section class="sec" id="location">
+        <div class="sec-eyebrow reveal">First Hub</div>
+        <h2 class="sec-heading reveal">Coming to New Jersey</h2>
+        <p class="sec-desc reveal">Our flagship location sets the standard.</p>
+        <div class="loc-card reveal">
+            <div><div class="loc-eyebrow">Flagship Location</div><h3>VoltStop Hub — Piscataway, NJ</h3>
+                <div class="loc-meta"><span>📍 431 Stelton Rd, Piscataway, NJ</span><span>⚡ 6–8 DC Fast Chargers (Tritium)</span><span>🛋️ Luxury lounge, café, retail</span><span>📅 Targeting 2026 Launch</span></div>
             </div>
-            <div class="team-card reveal">
-                <div class="team-avatar">MP</div>
-                <h3>Marcus Peake Jr.</h3>
-                <div class="team-role">Founder</div>
-                <p>Overseeing operations, site development, and strategic growth. Ensuring every VoltStop hub delivers a premium experience.</p>
-                <div class="team-socials">
-                    <a href="https://www.linkedin.com/in/marcus-peake-jr-801480174/" target="_blank" rel="noopener">LinkedIn</a>
-                </div>
-            </div>
-            <div class="team-card reveal">
-                <div class="team-avatar">AS</div>
-                <h3>Ayush Saxena</h3>
-                <div class="team-role">CTO & Technical Co-Founder</div>
-                <p>Architecting VoltStop OS - the software layer powering charger management, payments, load balancing, and the customer experience.</p>
-                <div class="team-socials">
-                    <a href="https://www.linkedin.com/in/ayush-saxena-18b159b2/" target="_blank" rel="noopener">LinkedIn</a>
-                    <!-- <a href="https://github.com/ayushs-dev" target="_blank" rel="noopener">GitHub</a> -->
-                </div>
-            </div>
+            <div><a href="#connect" class="btn-glow" style="padding:0.8rem 1.8rem;font-size:0.88rem;">Get Notified →</a></div>
         </div>
     </section>
-
-    <hr class="divider">
-
-    <!-- ─── FIRST LOCATION ─── -->
-    <section class="section" id="location">
-        <div class="section-eyebrow reveal">First Hub</div>
-        <h2 class="section-heading reveal">Coming to New Jersey</h2>
-        <p class="section-sub reveal">Our flagship location is designed to set the standard for premium EV charging.</p>
-        <div class="location-banner reveal">
-            <div class="loc-info">
-                <div class="loc-tag">Flagship Location</div>
-                <h3>VoltStop Hub — Piscataway, NJ</h3>
-                <div class="loc-meta">
-                    <span>📍 431 Stelton Rd, Piscataway, NJ</span>
-                    <span>⚡ 6–8 DC Fast Chargers (Tritium)</span>
-                    <span>🛋️ Luxury lounge, café, retail</span>
-                    <span>📅 Targeting 2026 Launch</span>
-                </div>
-            </div>
-            <div class="loc-actions">
-                <a href="#connect" class="btn-fill" style="padding: 0.8rem 1.8rem; font-size: 0.9rem;">Get Notified →</a>
-            </div>
+    <hr class="hr">
+    <section class="sec" id="partners" style="text-align:center;">
+        <div class="sec-eyebrow reveal" style="justify-content:center;">Partners</div>
+        <h2 class="sec-heading reveal" style="text-align:center;">Our Contributors</h2>
+        <p class="sec-desc reveal" style="margin-left:auto;margin-right:auto;text-align:center;">Organizations that share our commitment to sustainable mobility.</p>
+        <div class="partners-wrap reveal-stagger">
+            <div class="p-chip">Tritium</div><div class="p-chip">Energator</div><div class="p-chip">Skripton</div>
+            <div class="p-chip">Travelo Boutique Hotel</div><div class="p-chip">Gazeit</div><div class="p-chip">GLMP.IT</div><div class="p-chip">mtvs.news</div>
         </div>
     </section>
-
-    <hr class="divider">
-
-    <!-- ─── PARTNERS ─── -->
-    <section class="section" id="partners" style="text-align: center;">
-        <div class="section-eyebrow reveal" style="text-align: center;">Partners</div>
-        <h2 class="section-heading reveal" style="text-align: center;">Our Contributors</h2>
-        <p class="section-sub reveal" style="margin-left: auto; margin-right: auto; text-align: center;">Backed by organizations that share our commitment to sustainable, connected mobility.</p>
-        <div class="partners-row reveal">
-            <div class="partner-chip">Tritium</div>
-            <div class="partner-chip">Energator</div>
-            <div class="partner-chip">Skripton</div>
-            <div class="partner-chip">Travelo Boutique Hotel</div>
-            <div class="partner-chip">Gazeit</div>
-            <div class="partner-chip">GLMP.IT</div>
-            <div class="partner-chip">mtvs.news</div>
-        </div>
-    </section>
-
-    <hr class="divider">
-
-    <!-- ─── CTA ─── -->
-    <section class="cta-section" id="connect">
-        <h2 class="reveal">Join the <em>VoltStop</em> Community</h2>
+    <hr class="hr">
+    <section class="cta-sec" id="connect">
+        <h2 class="reveal">Join the <span class="accent">VoltStop</span> Community</h2>
         <p class="reveal">Be the first to know when we launch. Early members get exclusive founding rates and priority access.</p>
-        <div class="cta-form reveal">
-            <input type="email" placeholder="your@email.com" aria-label="Email address">
-            <button type="button">Subscribe</button>
-        </div>
+        <div class="cta-form reveal"><input type="email" placeholder="your@email.com" aria-label="Email address"><button type="button">Subscribe</button></div>
         <div class="contact-row reveal">
             <div class="contact-chip">📞 <a href="tel:+17322588921">(732) 258-8921</a></div>
             <div class="contact-chip">✉️ <a href="mailto:info@voltstop.com">info@voltstop.com</a></div>
             <div class="contact-chip">📍 New Jersey, USA</div>
         </div>
     </section>
-
-    <!-- ─── FOOTER ─── -->
     <footer class="footer">
         <div class="footer-left">© 2026 VoltStop, Inc. All rights reserved.</div>
-        <ul class="footer-links">
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms & Conditions</a></li>
-            <li><a href="#">Accessibility</a></li>
-        </ul>
+        <ul class="footer-mid"><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms & Conditions</a></li><li><a href="#">Accessibility</a></li></ul>
         <div class="footer-social">
-            <a href="https://www.linkedin.com/company/voltstop" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
-            <a href="https://www.instagram.com/volt.stop" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
-            <a href="https://github.com/VoltStop" target="_blank" rel="noopener" aria-label="GitHub">gh</a>
+            <a href="https://www.linkedin.com/company/voltstop" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="https://www.instagram.com/volt.stop" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678a6.162 6.162 0 100 12.324 6.162 6.162 0 100-12.324zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405a1.441 1.441 0 11-2.88 0 1.441 1.441 0 012.88 0z"/></svg></a>
+            <a href="https://github.com/VoltStop" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
         </div>
     </footer>
-
-    <!-- ─── SCRIPTS ─── -->
+    <style>
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        :root{--c-bg:#050907;--c-surface:#0A110D;--c-card:#0E1712;--c-card-hover:#121D17;--c-border:#162019;--c-border-lit:#1F3328;--c-green:#00E87B;--c-green-soft:rgba(0,232,123,0.10);--c-green-glow:rgba(0,232,123,0.06);--c-cyan:#00D4AA;--c-text:#D8EDE0;--c-text-2:#7FA98D;--c-text-3:#4B7258;--c-white:#F0FAF3;--ff:'Sora',sans-serif;--fm:'JetBrains Mono',monospace;--r-sm:8px;--r-md:14px;--r-lg:22px;--r-xl:32px;--ease:cubic-bezier(0.16,1,0.3,1)}
+        html{scroll-behavior:smooth}
+        body{font-family:var(--ff);background:var(--c-bg);color:var(--c-text);overflow-x:hidden;line-height:1.6;-webkit-font-smoothing:antialiased}
+        a{color:inherit;text-decoration:none}
+        .cursor-glow{position:fixed;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(0,232,123,0.035) 0%,transparent 70%);pointer-events:none;z-index:9998;transform:translate(-50%,-50%);will-change:transform}
+        .loader{position:fixed;inset:0;background:var(--c-bg);z-index:10000;display:grid;place-items:center;transition:opacity 0.6s var(--ease),visibility 0.6s}
+        .loader.done{opacity:0;visibility:hidden;pointer-events:none}
+        .loader-bolt{font-size:2.5rem;animation:loaderPulse 1s infinite}
+        .loader-bar{width:120px;height:2px;background:var(--c-border);margin:1.5rem auto 0;border-radius:2px;overflow:hidden;position:relative}
+        .loader-bar::after{content:'';position:absolute;left:-40%;width:40%;height:100%;background:var(--c-green);border-radius:2px;animation:loaderSlide 1s infinite var(--ease)}
+        @keyframes loaderPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(0.95)}}
+        @keyframes loaderSlide{0%{left:-40%}100%{left:100%}}
+        .nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:72px;padding:0 clamp(1.25rem,4vw,3rem);display:flex;align-items:center;justify-content:space-between;background:rgba(5,9,7,0.7);backdrop-filter:blur(30px) saturate(1.4);border-bottom:1px solid rgba(22,32,25,0.6);transition:transform 0.4s var(--ease)}
+        .nav.hide{transform:translateY(-100%)}
+        .nav-logo{display:flex;align-items:center;gap:0.65rem;text-decoration:none;color:var(--c-white);font-weight:700;font-size:1.2rem;letter-spacing:-0.025em}
+        .nav-logo-mark{width:36px;height:36px;background:var(--c-green);border-radius:10px;display:grid;place-items:center;position:relative;overflow:hidden}
+        .nav-logo-mark svg{width:18px;height:18px;fill:var(--c-bg);position:relative;z-index:1}
+        .nav-logo-mark::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.2),transparent);border-radius:inherit}
+        .nav-links{display:flex;align-items:center;gap:0.15rem;list-style:none}
+        .nav-links a{padding:0.45rem 0.9rem;font-size:0.82rem;font-weight:500;color:var(--c-text-2);text-decoration:none;border-radius:var(--r-sm);transition:color 0.25s,background 0.25s;letter-spacing:0.01em}
+        .nav-links a:hover{color:var(--c-white);background:rgba(255,255,255,0.04)}
+        .nav-cta{margin-left:0.75rem;padding:0.5rem 1.25rem!important;background:var(--c-green)!important;color:var(--c-bg)!important;font-weight:600!important;border-radius:var(--r-sm)!important;transition:transform 0.2s var(--ease),box-shadow 0.3s!important}
+        .nav-cta:hover{transform:translateY(-1px)!important;box-shadow:0 6px 24px rgba(0,232,123,0.15)!important}
+        .hamburger{display:none;background:none;border:none;cursor:pointer;padding:6px;flex-direction:column;gap:5px}
+        .hamburger span{display:block;width:22px;height:1.5px;background:var(--c-text);border-radius:1px;transition:all 0.3s}
+        .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:8rem 2rem 4rem;position:relative;overflow:hidden}
+        #heroCanvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+        .hero-content{position:relative;z-index:1}
+        .hero-tag{font-family:var(--fm);font-size:0.68rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--c-green);border:1px solid var(--c-border);background:rgba(14,23,18,0.7);backdrop-filter:blur(12px);padding:0.55rem 1.4rem;border-radius:100px;display:inline-flex;align-items:center;gap:0.65rem;margin-bottom:2.5rem;opacity:0;transform:translateY(20px);animation:heroIn 0.8s var(--ease) 0.3s forwards}
+        .hero-tag-dot{width:6px;height:6px;background:var(--c-green);border-radius:50%;box-shadow:0 0 8px var(--c-green);animation:blink 2.5s infinite}
+        .hero h1{font-size:clamp(3rem,10vw,7.5rem);font-weight:800;line-height:0.95;letter-spacing:-0.055em;max-width:900px;opacity:0;transform:translateY(30px);animation:heroIn 0.9s var(--ease) 0.45s forwards}
+        .hero h1 .accent,.accent{background:linear-gradient(135deg,var(--c-green),var(--c-cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .accent-inline{background:linear-gradient(135deg,var(--c-green),var(--c-cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .hero-sub{font-size:clamp(1rem,2.2vw,1.2rem);color:var(--c-text-2);max-width:480px;margin:1.75rem auto 2.5rem;font-weight:400;line-height:1.75;opacity:0;transform:translateY(20px);animation:heroIn 0.8s var(--ease) 0.6s forwards}
+        .hero-btns{display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;opacity:0;transform:translateY(20px);animation:heroIn 0.8s var(--ease) 0.75s forwards}
+        .btn-glow{display:inline-flex;align-items:center;gap:0.5rem;padding:0.95rem 2.2rem;background:var(--c-green);color:var(--c-bg);font-weight:700;font-size:0.92rem;font-family:var(--ff);border-radius:var(--r-md);border:none;cursor:pointer;text-decoration:none;position:relative;overflow:hidden;transition:transform 0.25s var(--ease),box-shadow 0.4s}
+        .btn-glow::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.25),transparent 60%);opacity:0;transition:opacity 0.3s}
+        .btn-glow:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 8px 40px rgba(0,232,123,0.2),0 0 80px rgba(0,232,123,0.08)}
+        .btn-glow:hover::before{opacity:1}
+        .btn-ghost{display:inline-flex;align-items:center;gap:0.5rem;padding:0.95rem 2.2rem;background:transparent;color:var(--c-text);font-weight:600;font-size:0.92rem;font-family:var(--ff);border-radius:var(--r-md);border:1px solid var(--c-border);cursor:pointer;text-decoration:none;transition:border-color 0.3s,background 0.3s,transform 0.25s var(--ease)}
+        .btn-ghost:hover{border-color:var(--c-border-lit);background:rgba(255,255,255,0.02);transform:translateY(-1px)}
+        .scroll-hint{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:0.5rem;opacity:0;animation:heroIn 0.6s var(--ease) 1.2s forwards}
+        .scroll-hint span{font-family:var(--fm);font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--c-text-3)}
+        .scroll-line{width:1px;height:40px;background:var(--c-border);position:relative;overflow:hidden}
+        .scroll-line::after{content:'';position:absolute;top:-100%;width:100%;height:50%;background:var(--c-green);animation:scrollDown 2s infinite var(--ease)}
+        @keyframes scrollDown{0%{top:-50%}100%{top:150%}}
+        .stats-ribbon{display:grid;grid-template-columns:repeat(4,1fr);max-width:1000px;margin:0 auto;border-top:1px solid var(--c-border);border-bottom:1px solid var(--c-border)}
+        .stat-cell{padding:2.5rem 1.5rem;text-align:center;border-right:1px solid var(--c-border);position:relative}
+        .stat-cell:last-child{border-right:none}
+        .stat-val{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;letter-spacing:-0.03em;color:var(--c-white)}
+        .stat-val em{font-style:normal;color:var(--c-green);font-size:0.7em}
+        .stat-lbl{font-family:var(--fm);font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--c-text-3);margin-top:0.35rem}
+        .sec{padding:clamp(4rem,8vw,7rem) clamp(1.25rem,4vw,3rem);max-width:1140px;margin:0 auto}
+        .sec-eyebrow{font-family:var(--fm);font-size:0.65rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--c-green);margin-bottom:0.75rem;display:flex;align-items:center;gap:0.75rem}
+        .sec-eyebrow::before{content:'';width:24px;height:1px;background:var(--c-green);display:inline-block}
+        .sec-heading{font-size:clamp(2rem,4.5vw,3rem);font-weight:700;letter-spacing:-0.04em;line-height:1.1;margin-bottom:0.75rem}
+        .sec-desc{font-size:1rem;color:var(--c-text-2);max-width:520px;line-height:1.75;margin-bottom:3rem}
+        .hr{max-width:1140px;margin:0 auto;border:none;border-top:1px solid var(--c-border)}
+        .about-bento{display:grid;grid-template-columns:1.2fr 0.8fr;gap:1.25rem}
+        .bento-card{background:var(--c-card);border:1px solid var(--c-border);border-radius:var(--r-lg);padding:2.5rem;position:relative;overflow:hidden;transition:border-color 0.4s,transform 0.4s var(--ease)}
+        .bento-card:hover{border-color:var(--c-border-lit);transform:translateY(-2px)}
+        .bento-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--c-green),transparent);opacity:0;transition:opacity 0.4s}
+        .bento-card:hover::before{opacity:0.5}
+        .bento-mission h2{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;letter-spacing:-0.035em;line-height:1.15;margin-bottom:1.25rem}
+        .bento-mission p{font-size:0.95rem;color:var(--c-text-2);line-height:1.8;margin-bottom:1.5rem}
+        .bento-visual{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+        .bento-visual-orb{width:100px;height:100px;border-radius:50%;background:var(--c-green-soft);border:1px solid var(--c-border);display:grid;place-items:center;font-size:2.5rem;margin-bottom:1.25rem;position:relative;animation:orbFloat 4s ease-in-out infinite}
+        .bento-visual-orb::after{content:'';position:absolute;inset:-20px;border-radius:50%;background:radial-gradient(circle,var(--c-green-glow),transparent 70%)}
+        .bento-visual h3{font-size:1.1rem;font-weight:600;margin-bottom:0.3rem;position:relative}
+        .bento-visual p{font-size:0.82rem;color:var(--c-text-2);position:relative}
+        @keyframes orbFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+        .vision-strip{padding:clamp(3rem,6vw,5rem) 2rem;text-align:center;max-width:760px;margin:0 auto;position:relative}
+        .vision-strip h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;letter-spacing:-0.04em;line-height:1.2;margin-bottom:1rem}
+        .vision-strip p{font-size:1.05rem;color:var(--c-text-2);line-height:1.8;max-width:560px;margin:0 auto}
+        .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+        .feat-card{background:var(--c-card);border:1px solid var(--c-border);border-radius:var(--r-lg);padding:2rem;position:relative;overflow:hidden;transition:border-color 0.35s,transform 0.4s var(--ease),box-shadow 0.4s}
+        .feat-card:hover{border-color:var(--c-border-lit);transform:translateY(-5px);box-shadow:0 20px 60px rgba(0,0,0,0.3),0 0 40px var(--c-green-glow)}
+        .feat-card::after{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--c-green),transparent);opacity:0;transition:opacity 0.35s}
+        .feat-card:hover::after{opacity:0.6}
+        .feat-ico{width:44px;height:44px;background:var(--c-green-soft);border-radius:12px;display:grid;place-items:center;font-size:1.15rem;margin-bottom:1.25rem;transition:transform 0.3s var(--ease)}
+        .feat-card:hover .feat-ico{transform:scale(1.1) rotate(-3deg)}
+        .feat-card h3{font-size:1rem;font-weight:600;margin-bottom:0.5rem;letter-spacing:-0.01em}
+        .feat-card p{font-size:0.85rem;color:var(--c-text-2);line-height:1.7}
+        .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+        .team-card{background:var(--c-card);border:1px solid var(--c-border);border-radius:var(--r-lg);padding:2.5rem 2rem;text-align:center;transition:border-color 0.35s,transform 0.4s var(--ease);position:relative;overflow:hidden}
+        .team-card:hover{border-color:var(--c-border-lit);transform:translateY(-4px)}
+        .team-card::before{content:'';position:absolute;top:-60%;left:50%;transform:translateX(-50%);width:200px;height:200px;background:radial-gradient(circle,var(--c-green-glow),transparent 70%);opacity:0;transition:opacity 0.4s}
+        .team-card:hover::before{opacity:1}
+        .team-av{width:76px;height:76px;border-radius:50%;background:linear-gradient(135deg,var(--c-green-soft),rgba(0,212,170,0.08));border:2px solid var(--c-border);display:grid;place-items:center;font-family:var(--fm);font-size:1.1rem;font-weight:600;color:var(--c-green);margin:0 auto 1.25rem;position:relative;transition:border-color 0.3s}
+        .team-card:hover .team-av{border-color:var(--c-border-lit)}
+        .team-card h3{font-size:1.05rem;font-weight:600;margin-bottom:0.15rem;position:relative}
+        .team-title{font-family:var(--fm);font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--c-green);margin-bottom:0.85rem;position:relative}
+        .team-card>p{font-size:0.85rem;color:var(--c-text-2);line-height:1.65;position:relative}
+        .team-links{display:flex;justify-content:center;gap:0.5rem;margin-top:1.1rem;position:relative}
+        .team-links a{font-family:var(--fm);font-size:0.68rem;font-weight:500;color:var(--c-text-3);padding:0.3rem 0.7rem;border:1px solid var(--c-border);border-radius:var(--r-sm);text-decoration:none;transition:color 0.2s,border-color 0.2s}
+        .team-links a:hover{color:var(--c-green);border-color:var(--c-border-lit)}
+        .loc-card{background:var(--c-card);border:1px solid var(--c-border);border-radius:var(--r-xl);padding:3rem;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center;position:relative;overflow:hidden}
+        .loc-card::before{content:'';position:absolute;top:-40%;right:-8%;width:350px;height:350px;background:radial-gradient(circle,var(--c-green-glow),transparent 65%);pointer-events:none}
+        .loc-eyebrow{font-family:var(--fm);font-size:0.62rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--c-green);margin-bottom:0.6rem}
+        .loc-card h3{font-size:1.35rem;font-weight:700;letter-spacing:-0.02em;margin-bottom:0.85rem}
+        .loc-meta{display:flex;flex-direction:column;gap:0.45rem}
+        .loc-meta span{font-size:0.88rem;color:var(--c-text-2);display:flex;align-items:center;gap:0.5rem}
+        .partners-wrap{display:flex;flex-wrap:wrap;gap:0.85rem;justify-content:center}
+        .p-chip{background:var(--c-card);border:1px solid var(--c-border);border-radius:var(--r-md);padding:0.85rem 1.5rem;font-weight:600;font-size:0.88rem;color:var(--c-text-2);transition:border-color 0.3s,color 0.3s,transform 0.3s var(--ease)}
+        .p-chip:hover{border-color:var(--c-border-lit);color:var(--c-white);transform:translateY(-2px)}
+        .cta-sec{text-align:center;padding:clamp(5rem,10vw,8rem) 2rem;max-width:620px;margin:0 auto;position:relative}
+        .cta-sec::before{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:500px;height:500px;background:radial-gradient(circle,var(--c-green-glow),transparent 65%);pointer-events:none}
+        .cta-sec h2{font-size:clamp(2.2rem,5vw,3.2rem);font-weight:700;letter-spacing:-0.04em;margin-bottom:1rem;position:relative}
+        .cta-sec>p{color:var(--c-text-2);font-size:1rem;max-width:420px;margin:0 auto 2.5rem;position:relative;line-height:1.7}
+        .cta-form{display:flex;gap:0.5rem;max-width:420px;margin:0 auto 2.5rem;position:relative}
+        .cta-form input{flex:1;padding:0.85rem 1.1rem;border-radius:var(--r-md);border:1px solid var(--c-border);background:var(--c-card);color:var(--c-text);font-family:var(--ff);font-size:0.88rem;outline:none;transition:border-color 0.3s,box-shadow 0.3s}
+        .cta-form input::placeholder{color:var(--c-text-3)}
+        .cta-form input:focus{border-color:var(--c-green);box-shadow:0 0 0 3px rgba(0,232,123,0.08)}
+        .cta-form button{padding:0.85rem 1.5rem;border-radius:var(--r-md);background:var(--c-green);color:var(--c-bg);border:none;font-family:var(--ff);font-weight:700;font-size:0.88rem;cursor:pointer;transition:transform 0.2s var(--ease),box-shadow 0.3s;white-space:nowrap}
+        .cta-form button:hover{transform:translateY(-1px);box-shadow:0 6px 24px rgba(0,232,123,0.15)}
+        .contact-row{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;position:relative}
+        .contact-chip{font-size:0.8rem;color:var(--c-text-3);display:flex;align-items:center;gap:0.4rem}
+        .contact-chip a{color:var(--c-text-2);text-decoration:none;transition:color 0.2s}
+        .contact-chip a:hover{color:var(--c-green)}
+        .footer{border-top:1px solid var(--c-border);padding:2.5rem clamp(1.25rem,4vw,3rem);max-width:1140px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem}
+        .footer-left{font-size:0.75rem;color:var(--c-text-3)}
+        .footer-mid{display:flex;gap:1.25rem;list-style:none;flex-wrap:wrap}
+        .footer-mid a{font-size:0.75rem;color:var(--c-text-3);text-decoration:none;transition:color 0.2s}
+        .footer-mid a:hover{color:var(--c-text-2)}
+        .footer-social{display:flex;gap:0.5rem}
+        .footer-social a{width:32px;height:32px;border:1px solid var(--c-border);border-radius:var(--r-sm);display:grid;place-items:center;color:var(--c-text-3);text-decoration:none;transition:border-color 0.2s,color 0.2s}
+        .footer-social a:hover{border-color:var(--c-border-lit);color:var(--c-green)}
+        .footer-social svg{width:14px;height:14px;fill:currentColor}
+        @keyframes heroIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+        @keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+        .reveal{opacity:0;transform:translateY(40px);transition:opacity 0.8s var(--ease),transform 0.8s var(--ease)}
+        .reveal.vis{opacity:1;transform:translateY(0)}
+        .reveal-stagger>*{opacity:0;transform:translateY(30px);transition:opacity 0.6s var(--ease),transform 0.6s var(--ease)}
+        .reveal-stagger.vis>*:nth-child(1){transition-delay:0s}
+        .reveal-stagger.vis>*:nth-child(2){transition-delay:0.08s}
+        .reveal-stagger.vis>*:nth-child(3){transition-delay:0.08s}
+        .reveal-stagger.vis>*:nth-child(4){transition-delay:0.16s}
+        .reveal-stagger.vis>*:nth-child(5){transition-delay:0.24s}
+        .reveal-stagger.vis>*:nth-child(6){transition-delay:0.32s}
+        .reveal-stagger.vis>*:nth-child(7){transition-delay:0.40s}
+        .reveal-stagger.vis>*{opacity:1;transform:translateY(0)}
+        @media(max-width:900px){.feat-grid{grid-template-columns:repeat(2,1fr)}.team-grid{grid-template-columns:repeat(2,1fr)}}
+        @media(max-width:768px){
+            .nav-links{display:none;position:absolute;top:72px;left:0;right:0;background:rgba(5,9,7,0.97);backdrop-filter:blur(30px);flex-direction:column;padding:0.75rem 1rem;border-bottom:1px solid var(--c-border)}
+            .nav-links.open{display:flex}
+            .nav-links a{padding:0.75rem 1rem;width:100%}
+            .nav-cta{margin:0.5rem 0 0 0!important;text-align:center}
+            .hamburger{display:flex}
+            .hero{padding:7rem 1.25rem 4rem}
+            .stats-ribbon{grid-template-columns:repeat(2,1fr)}
+            .stat-cell:nth-child(2){border-right:none}
+            .stat-cell:nth-child(1),.stat-cell:nth-child(2){border-bottom:1px solid var(--c-border)}
+            .about-bento{grid-template-columns:1fr}
+            .feat-grid{grid-template-columns:1fr}
+            .team-grid{grid-template-columns:1fr}
+            .loc-card{grid-template-columns:1fr}
+            .cta-form{flex-direction:column}
+            .contact-row{flex-direction:column;align-items:center}
+            .footer{flex-direction:column;text-align:center}
+            .footer-mid{justify-content:center}
+            .footer-social{justify-content:center}
+            .scroll-hint{display:none}
+        }
+        @media(max-width:480px){.hero h1{font-size:2.6rem}.stats-ribbon{grid-template-columns:1fr 1fr}}
+    </style>
     <script>
-        // Mobile menu toggle
-        const hamburger = document.getElementById('hamburgerBtn');
-        const navMenu = document.getElementById('navMenu');
-        hamburger.addEventListener('click', () => {
-            navMenu.classList.toggle('open');
-        });
-
-        // Close menu on link click
-        navMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => navMenu.classList.remove('open'));
-        });
-
-        // Scroll reveal
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry, i) => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => entry.target.classList.add('visible'), i * 60);
-                    observer.unobserve(entry.target);
+        window.addEventListener('load',()=>{setTimeout(()=>document.getElementById('loader').classList.add('done'),600)});
+        const glow=document.getElementById('cursorGlow');let gX=0,gY=0,cX=0,cY=0;
+        if(window.matchMedia('(pointer:fine)').matches){document.addEventListener('mousemove',e=>{gX=e.clientX;gY=e.clientY});(function gl(){cX+=(gX-cX)*0.08;cY+=(gY-cY)*0.08;glow.style.transform=`translate(${cX-300}px,${cY-300}px)`;requestAnimationFrame(gl)})()}else{glow.style.display='none'}
+        let lastScroll=0;const nav=document.getElementById('nav');
+        window.addEventListener('scroll',()=>{const c=window.scrollY;if(c>100){nav.classList.toggle('hide',c>lastScroll)}else{nav.classList.remove('hide')}lastScroll=c},{passive:true});
+        const menuBtn=document.getElementById('menuBtn'),navLinks=document.getElementById('navLinks');
+        menuBtn.addEventListener('click',()=>navLinks.classList.toggle('open'));
+        navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+        const revealObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');revealObs.unobserve(e.target)}})},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+        document.querySelectorAll('.reveal,.reveal-stagger').forEach(el=>revealObs.observe(el));
+        (function(){
+            const canvas=document.getElementById('heroCanvas'),ctx=canvas.getContext('2d');let W,H,particles=[],mouse={x:-1000,y:-1000};
+            function resize(){W=canvas.width=canvas.offsetWidth;H=canvas.height=canvas.offsetHeight}
+            resize();window.addEventListener('resize',resize);
+            canvas.parentElement.addEventListener('mousemove',e=>{const r=canvas.getBoundingClientRect();mouse.x=e.clientX-r.left;mouse.y=e.clientY-r.top});
+            canvas.parentElement.addEventListener('mouseleave',()=>{mouse.x=-1000;mouse.y=-1000});
+            const COUNT=Math.min(80,Math.floor(W*H/12000));
+            for(let i=0;i<COUNT;i++){particles.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-0.5)*0.3,vy:(Math.random()-0.5)*0.3,r:Math.random()*1.5+0.5,a:Math.random()*0.3+0.1})}
+            function draw(){
+                ctx.clearRect(0,0,W,H);
+                for(let i=0;i<particles.length;i++){
+                    const p=particles[i],dx=p.x-mouse.x,dy=p.y-mouse.y,dist=Math.sqrt(dx*dx+dy*dy);
+                    if(dist<200){const f=(200-dist)/200*0.015;p.vx+=dx*f/dist;p.vy+=dy*f/dist}
+                    p.x+=p.vx;p.y+=p.vy;p.vx*=0.995;p.vy*=0.995;
+                    if(p.x<0)p.x=W;if(p.x>W)p.x=0;if(p.y<0)p.y=H;if(p.y>H)p.y=0;
+                    ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=`rgba(0,232,123,${p.a})`;ctx.fill();
+                    for(let j=i+1;j<particles.length;j++){
+                        const p2=particles[j],d=Math.hypot(p.x-p2.x,p.y-p2.y);
+                        if(d<140){ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(p2.x,p2.y);ctx.strokeStyle=`rgba(0,232,123,${0.06*(1-d/140)})`;ctx.lineWidth=0.5;ctx.stroke()}
+                    }
                 }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+                requestAnimationFrame(draw);
+            }
+            draw();
+        })();
     </script>
-
 </body>
 </html>
