@@ -157,6 +157,21 @@
         </div>
     </footer>
     <style>
+        .team-img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--c-border);
+            margin: 0 auto 1.2rem;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .team-card:hover .team-img {
+            transform: scale(1.05);
+            border-color: var(--c-border-lit);
+        }
         *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
         :root{--c-bg:#050907;--c-surface:#0A110D;--c-card:#0E1712;--c-card-hover:#121D17;--c-border:#162019;--c-border-lit:#1F3328;--c-green:#00E87B;--c-green-soft:rgba(0,232,123,0.10);--c-green-glow:rgba(0,232,123,0.06);--c-cyan:#00D4AA;--c-text:#D8EDE0;--c-text-2:#7FA98D;--c-text-3:#4B7258;--c-white:#F0FAF3;--ff:'Sora',sans-serif;--fm:'JetBrains Mono',monospace;--r-sm:8px;--r-md:14px;--r-lg:22px;--r-xl:32px;--ease:cubic-bezier(0.16,1,0.3,1)}
         html{scroll-behavior:smooth}
