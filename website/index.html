@@ -108,7 +108,7 @@
                 <div class="team-links"><a href="https://www.linkedin.com/in/marcus-peake-jr-801480174/" target="_blank" rel="noopener">LinkedIn</a></div>
             </div>
             <div class="team-card">
-                <img src="ayush.jpg" class="team-img"><h3>Ayush Saxena</h3><div class="team-title">CTO & Technical Co-Founder</div>
+                <img src="ayush.jpg" class="team-img ayush-img"><h3>Ayush Saxena</h3><div class="team-title">CTO & Technical Co-Founder</div>
                 <p>Architecting VoltStop OS — the software powering charger management, payments, and the customer experience.</p>
                 <div class="team-links"><a href="https://www.linkedin.com/in/ayush-saxena-18b159b2/" target="_blank" rel="noopener">LinkedIn</a></div>
             </div>
@@ -167,10 +167,48 @@
             display: block;
             transition: transform 0.3s ease;
         }
-
+        .ayush-img {
+            object-position: center 25%;
+        }
         .team-card:hover .team-img {
             transform: scale(1.05);
             border-color: var(--c-border-lit);
+        }
+        .team-card {
+            background: var(--c-card);
+            border: 1px solid var(--c-border);
+            border-radius: var(--r-lg);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: border-color 0.35s, transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at top, rgba(0, 232, 123, 0.08), transparent 55%);
+            opacity: 0;
+            transition: opacity 0.35s var(--ease);
+            pointer-events: none;
+        }
+
+        .team-card:hover {
+            transform: translateY(-6px) scale(1.01);
+            border-color: var(--c-border-lit);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.32), 0 0 40px rgba(0,232,123,0.08);
+        }
+
+        .team-card:hover::after {
+            opacity: 1;
+        }
+
+        .team-card:hover .team-img {
+            transform: scale(1.08);
+            border-color: var(--c-border-lit);
+            box-shadow: 0 0 24px rgba(0, 232, 123, 0.14);
         }
         *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
         :root{--c-bg:#050907;--c-surface:#0A110D;--c-card:#0E1712;--c-card-hover:#121D17;--c-border:#162019;--c-border-lit:#1F3328;--c-green:#00E87B;--c-green-soft:rgba(0,232,123,0.10);--c-green-glow:rgba(0,232,123,0.06);--c-cyan:#00D4AA;--c-text:#D8EDE0;--c-text-2:#7FA98D;--c-text-3:#4B7258;--c-white:#F0FAF3;--ff:'Sora',sans-serif;--fm:'JetBrains Mono',monospace;--r-sm:8px;--r-md:14px;--r-lg:22px;--r-xl:32px;--ease:cubic-bezier(0.16,1,0.3,1)}
